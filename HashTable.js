@@ -27,7 +27,7 @@ class HashTable {
 
     get(key) {
         let hashedKey = this._hash(key);
-
+        if(!this.table.length) return undefined;
         if (this.table[hashedKey].length >= 1) {
             for (let i=0; i< this.table[hashedKey].length; i++) {
                 if (key === this.table[hashedKey][i][0]) {
