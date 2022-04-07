@@ -24,6 +24,23 @@ class HashTable {
         }
         return this;
     }
+
+    get(key) {
+        let hashedKey = this._hash(key);
+
+        if (this.table[hashedKey].length >= 1) {
+            for (let i=0; i< this.table[hashedKey].length; i++) {
+                if (key === this.table[hashedKey][i][0]) {
+                    return this.table[hashedKey][i];
+                }
+            }
+        }
+        return false;
+    }
 }
 
 const ht = new HashTable();
+ht.set("riker", 4);
+ht.set("picard", 6);
+ht.set("worf", 3);
+ht.set("data", 2);
