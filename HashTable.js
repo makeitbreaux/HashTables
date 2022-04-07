@@ -12,6 +12,18 @@ class HashTable {
         }
         return key;
     }
+
+    set(key, value) {
+        const hashedKey = this._hash(key);
+
+        if(!this.table[hashedKey]) {
+            this.table[hashedKey] = [];
+            this.table[hashedKey].push([key, value])
+        } else {
+            this.table[hashedKey].push([key, value]);
+        }
+        return this;
+    }
 }
 
 const ht = new HashTable();
