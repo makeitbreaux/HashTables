@@ -37,6 +37,20 @@ class HashTable {
         }
         return false;
     }
+
+    keys() {
+        let result = [];
+
+        for (let i = 0; i < this.table.length; i ++) {
+            if (this.table[i].length) {
+                for (let j=0; j < this.table[i].length; j++) {
+                    result.push(this.table[i][j][0]);
+                }
+            }
+        }
+
+        return result;
+    }
 }
 
 const ht = new HashTable();
